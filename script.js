@@ -18,16 +18,7 @@ function updateClock() {
     document.getElementById('ampm').innerText = ampm;
     document.getElementById('date').innerText = `${month} ${day}, ${year}`;
 
-    // Update Analog Clock
-    let hourDegree = (hours % 12) * 30 + minutes * 0.5;
-    let minuteDegree = minutes * 6;
-    let secondDegree = seconds * 6;
-
-    document.getElementById('hour-hand').style.transform = `rotate(${hourDegree}deg)`;
-    document.getElementById('minute-hand').style.transform = `rotate(${minuteDegree}deg)`;
-    document.getElementById('second-hand').style.transform = `rotate(${secondDegree}deg)`;
-
-    // Change Clock Color Randomly
+    // Change Clock Color Randomly for Dynamic Look
     document.querySelector('.clock').style.color = `hsl(${seconds * 6}, 100%, 50%)`;
 }
 
@@ -35,7 +26,22 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock(); // Run once at start
 
-// Toggle Light/Dark Mode
+// Theme Toggle
 document.getElementById('themeToggle').addEventListener('click', function() {
-    document.body.classList.toggle('light-mode');
+    let body = document.body;
+
+    // If body already has light or dark mode, toggle between them
+    if (body.classList.contains('light-mode')) {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        this.innerText = "🌞 Light Mode";
+    } else if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        this.innerText = "🌙 Dark Mode";
+    } else {
+        // Default: Toggle to Dark Mode first
+        body.classList.add('dark-mode');
+        this.innerText = "🌞 Light Mode";
+    }
 });

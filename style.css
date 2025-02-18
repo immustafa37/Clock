@@ -60,46 +60,6 @@ button:hover {
     background: rgba(255, 255, 255, 0.5);
 }
 
-/* 3D Analog Clock */
-.analog-clock {
-    width: 150px;
-    height: 150px;
-    border: 5px solid white;
-    border-radius: 50%;
-    position: relative;
-    margin: 20px auto;
-}
-
-.hand {
-    position: absolute;
-    background: white;
-    transform-origin: bottom;
-}
-
-.hour {
-    width: 5px;
-    height: 40px;
-    left: 50%;
-    top: 25%;
-    transform: rotate(0deg);
-}
-
-.minute {
-    width: 3px;
-    height: 50px;
-    left: 50%;
-    top: 20%;
-    transform: rotate(0deg);
-}
-
-.second {
-    width: 2px;
-    height: 60px;
-    left: 50%;
-    top: 15%;
-    transform: rotate(0deg);
-}
-
 /* Dark Mode */
 body.dark-mode {
     background: linear-gradient(45deg, #1a1a1a, #333);
@@ -109,7 +69,6 @@ body.dark-mode .clock {
     color: #0ff;
     text-shadow: 0 0 15px cyan;
 }
-
 body.dark-mode .container {
     color: white;
 }
@@ -124,3 +83,10 @@ body.light-mode .clock {
     color: #000;
     text-shadow: 0 0 10px black;
 }
+
+.dark-mode .date {
+    color: white;
+  }
+  .light-mode .date {
+    color: black;
+  }
