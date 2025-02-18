@@ -14,7 +14,7 @@ body {
     background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
     font-family: 'Orbitron', sans-serif;
     overflow: hidden;
-    transition: background 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 .container {
@@ -53,9 +53,10 @@ button {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: background 0.3s, color 0.3s;
 }
 
+/* Button Hover Effect */
 button:hover {
     background: rgba(255, 255, 255, 0.5);
 }
@@ -63,13 +64,20 @@ button:hover {
 /* Dark Mode */
 body.dark-mode {
     background: linear-gradient(45deg, #1a1a1a, #333);
+    color: white;
 }
 
-body.dark-mode .clock {
+.dark-mode .clock {
     color: #0ff;
     text-shadow: 0 0 15px cyan;
 }
-body.dark-mode .container {
+
+.dark-mode .date {
+    color: white;
+}
+
+.dark-mode button {
+    background: rgba(255, 255, 255, 0.2);
     color: white;
 }
 
@@ -79,14 +87,20 @@ body.light-mode {
     color: black;
 }
 
-body.light-mode .clock {
+.light-mode .clock {
     color: #000;
     text-shadow: 0 0 10px black;
 }
 
-.dark-mode .date {
-    color: white;
-  }
-  .light-mode .date {
+.light-mode .date {
     color: black;
-  }
+}
+
+.light-mode button {
+    background: rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+.light-mode button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}

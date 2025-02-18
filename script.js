@@ -27,21 +27,28 @@ setInterval(updateClock, 1000);
 updateClock(); // Run once at start
 
 // Theme Toggle
-document.getElementById('themeToggle').addEventListener('click', function() {
-    let body = document.body;
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
 
-    // If body already has light or dark mode, toggle between them
+// Load theme from localStorage
+if (localStorage.getItem('theme') === 'light-mode') {
+    body.classList.add('light-mode');
+    themeToggle.innerText = "🌙 Dark Mode";
+} else {
+    body.classList.add('dark-mode');
+    themeToggle.innerText = "🌞 Light Mode";
+}
+
+themeToggle.addEventListener('click', function() {
     if (body.classList.contains('light-mode')) {
         body.classList.remove('light-mode');
         body.classList.add('dark-mode');
-        this.innerText = "🌞 Light Mode";
-    } else if (body.classList.contains('dark-mode')) {
+        themeToggle.innerText = "🌞 Light Mode";
+        localStorage.setItem('theme', 'dark-mode');
+    } else {
         body.classList.remove('dark-mode');
         body.classList.add('light-mode');
-        this.innerText = "🌙 Dark Mode";
-    } else {
-        // Default: Toggle to Dark Mode first
-        body.classList.add('dark-mode');
-        this.innerText = "🌞 Light Mode";
+        themeToggle.innerText = "🌙 Dark Mode";
+        localStorage.setItem('theme', 'light-mode');
     }
 });
