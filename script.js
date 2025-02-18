@@ -18,3 +18,7 @@ function updateClock() {
     document.getElementById('ampm').innerText = ampm;
     document.getElementById('date').innerText = `${month} ${day}, ${year}`;
 }
+
+// Update clock every second
+setInterval(updateClock, 1000);
+updateClock(); // Run once at start

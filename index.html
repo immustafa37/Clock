@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="toggle-container">
+        <button id="themeToggle">🌙 Toggle Mode</button>
+    </div>
     <div class="container">
         <div class="clock">
             <span id="hours">00</span> :
@@ -15,6 +18,11 @@
             <span id="ampm">AM</span>
         </div>
         <div class="date" id="date">Loading...</div>
+        <div class="analog-clock">
+            <div class="hand hour" id="hour-hand"></div>
+            <div class="hand minute" id="minute-hand"></div>
+            <div class="hand second" id="second-hand"></div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
