@@ -9,3 +9,31 @@ body {
     font-family: 'Orbitron', sans-serif;
     overflow: hidden;
 }
+
+.container {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.clock {
+    font-size: 80px;
+    font-weight: bold;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan;
+    animation: glow 1.5s infinite alternate;
+}
+
+.date {
+    font-size: 24px;
+    margin-top: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+    }
+    100% {
+        text-shadow: 0 0 20px cyan, 0 0 30px cyan;
+    }
+}
